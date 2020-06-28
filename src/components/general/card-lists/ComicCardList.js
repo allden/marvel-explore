@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import utils from '../utils';
+import utils from '../../utils';
 
 function ComicsCardList(props) {
     const {comics} = props;

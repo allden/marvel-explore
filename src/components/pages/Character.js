@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
-import ComicCardList from '../general/ComicCardList';
-import SeriesCardList from '../general/SeriesCardList';
+import ComicCardList from '../general/card-lists/ComicCardList';
+import SeriesCardList from '../general/card-lists/SeriesCardList';
 import utils from '../utils';
 
 class Character extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            character: ''
+            character: '',
+            comics: '',
+            series: ''
         };
         this.url = utils.getUrl();
     };

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import utils from '../utils';
+import utils from '../../utils';
 
 function SeriesCardList(props) {
     const {series} = props;
@@ -11,7 +11,7 @@ function SeriesCardList(props) {
         const descriptionParagraph = description ? <p>{description}</p> : null;
         
         return (
-            <div key={id}>
+            <div className="card" key={id}>
                 <p>{title}</p>
                 <Link to={`/series/${id}`}><img src={imgSrc} alt={`${title} cover`} /></Link>
                 {descriptionParagraph}

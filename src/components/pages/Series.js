@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import SeriesCardList from '../general/SeriesCardList';
+import SeriesCardList from '../general/card-lists/SeriesCardList';
 import utils from '../utils';
 
 class Series extends Component {

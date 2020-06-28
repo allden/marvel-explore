@@ -1,5 +1,5 @@
 import React from 'react';
-import utils from '../utils';
+import utils from '../../utils';
 import {Link} from 'react-router-dom';
 
 function CharacterCardList(props) {
@@ -16,7 +16,7 @@ function CharacterCardList(props) {
         return (
             <div className="card" key={id}>
                 <p>{name}</p>
-                <Link to={`/character/${id}`}><img src={imgSrc} alt={`Portrait of ${name}`} /></Link>
+                <Link to={`/characters/${id}`}><img src={imgSrc} alt={`Portrait of ${name}`} /></Link>
                 {descriptionParagraph}
             </div>
         )
