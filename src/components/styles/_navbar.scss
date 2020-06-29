@@ -1,0 +1,84 @@
+@import './colors';
+@use './_utils' as utils;
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: map-get($colors, primary-light);
+    box-shadow: 0px 1px 10px 0px map-get($colors, primary-grey);
+
+    a {
+        text-decoration: none;
+        color: map-get($colors, primary-dark);
+    }
+
+    .nav {
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        text-align: center;
+        list-style: none;
+        transition: transform .5s;
+
+        .nav-item {
+            .nav-link {
+                display: block;
+                padding: .75rem 1rem;
+                background: map-get($colors, primary-dark);
+                transition: background .5s;
+                color: map-get($colors, primary-light);
+                text-decoration: none;
+
+                &:hover, &.active {
+                    background: darken(map-get($colors, primary-dark), 5%);
+                }
+            }
+        }
+    }
+}
+
+.marvel-logo {
+    background: map-get($colors, primary-red);
+    padding: .5rem .5rem;
+    color: map-get($colors, primary-light);
+}
+
+.menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    margin: 0 1rem;
+
+    &:hover .hamburger-line {
+        background: map-get($colors, primary-red) !important;
+    }
+
+    .hamburger-line {
+        width: 45px;
+        height: 6px;
+        background: map-get($colors, primary-dark);
+        border-radius: 5px;
+        display: block;
+        transition: background .5s;
+
+        &::before {
+            content: '';
+            transform: translateY(-14px);
+            @extend .hamburger-line;
+        }
+
+        &::after {
+            content: '';
+            transform: translateY(8px);
+            @extend .hamburger-line;
+        }
+    }
+}

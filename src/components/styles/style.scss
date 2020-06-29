@@ -1,0 +1,44 @@
+@import './colors';
+@import './banners';
+@import './general';
+@import './reset';
+@import './navbar';
+@import './footer';
+@import './items';
+
+@function getColor($color) {
+    @return map-get($colors, "primary-#{$color}")
+}
+
+.text-dark { color: getColor('dark') }
+.text-red { color: getColor('red') }
+.text-orange { color: getColor('orange') }
+.text-green { color: getColor('green') }
+.text-violet { color: getColor('violet') }
+
+.btn {
+    display: block;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    color: map-get($colors, primary-light) ;
+
+    &-red { background: getColor('red') }
+    &-orange { background: getColor('orange') }
+    &-green { background: getColor('green') }
+    &-violet { background: getColor('violet') }
+}
+
+.border-bottom {
+    border-bottom: 1px solid;
+
+    &.border-red { border-color: getColor('red') }
+    &.border-orange { border-color: getColor('orange') }
+    &.border-green { border-color: getColor('green') }
+    &.border-violet { border-color: getColor('violet') }
+}
+
+@media screen and (max-height: 550px) {
+    .vh-200 {
+        height: initial;
+    }
+};

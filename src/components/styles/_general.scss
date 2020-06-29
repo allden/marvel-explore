@@ -1,0 +1,55 @@
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    padding: .75rem;
+}
+
+.scaleY-0 {
+    transform-origin: top;
+    transform: scaleY(0);
+}
+
+.scaleY-1 {
+    transform-origin: top;
+    transform: scaleY(1);
+}
+
+.h-100 {
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow: auto;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.vh-200 {
+    min-height: 200vh;
+}
+
+.d-flex {
+    display: flex;
+
+    &.flex-col {
+        flex-direction: column;
+    }
+    
+    &.flex-row {
+        flex-direction: row;
+    }
+
+    &.align-center {
+        align-items: center;
+    }
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}

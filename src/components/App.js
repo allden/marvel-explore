@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './styles/style.scss';
 // routes
 import Characters from './pages/Characters';
 import Character from './pages/Character';
@@ -11,14 +12,15 @@ import Creator from './pages/Creator';
 import Featured from './general/Featured';
 // misc
 import Nav from './general/Nav';
+import Footer from './general/Footer'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 class App extends Component {
     render() {
         return (
             <Router>
-                <main>
-                    <Nav />
+                <Nav />
+                <main className="vh-200">
                     <Switch>
                         <Route exact path="/" component={Featured}></Route>
                         <Route exact path="/characters" component={Characters}></Route>
@@ -30,6 +32,7 @@ class App extends Component {
                         <Route exact path="/creators" component={Creators}></Route>
                         <Route exact path="/creators/:id" component={Creator}></Route>
                     </Switch>
+                    <Footer />
                 </main>
             </Router>
         );

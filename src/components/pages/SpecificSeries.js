@@ -26,6 +26,7 @@ class SpecificSeries extends Component {
             fetchArr.map(url => fetch(url).then(res => res.json()))
         ).then(dataArr => {
             const [seriesResponse, seriesCharactersResponse, seriesCreatorsResponse] = dataArr;
+            console.log(seriesResponse);
 
             const series = seriesResponse.data.data.results[0];
             const characters = seriesCharactersResponse.data.data.results;

@@ -1,24 +1,37 @@
 import React from 'react';
+import Banner from './Banner';
 
 function Featured() {
     return (
-        <div>
-            <div>
-                <h1>Welcome to Marvel Explore</h1>
-                <p>Here you will find information about Marvel and its franchises.</p>
-            </div>
-            <div>
-                <h2>Characters</h2>
-                <p>Features a list of characters directly retrieved from Marvel's Database, so it is always up-to-date!</p>
-            </div>
-            <div>
-                <h2>Comics</h2>
-                <p>Interested in comics? Feel free to visit the comics page for information on the comic itself, its characters and its creators.</p>
-            </div>
-            <div>
-                <h2>Series</h2>
-                <p>If live-action is your forte, this website provides a list of every released Marvel series and allows you to easily find the ones featuring your favorite characters.</p>
-            </div>
+        <div className="d-flex flex-col h-100">
+            <Banner 
+                color="red" 
+                start={true} 
+                header="Characters" 
+                text="Marvel Explore features a collection of your favorite characters straight from the Marvel database."
+                name="marvel"
+            />
+            <Banner 
+                color="orange" 
+                start={false} 
+                header="Series" 
+                text="We offer a collection of series and information about them including characters, creators and more."
+                name="iron-man"
+            />
+            <Banner 
+                color="green" 
+                start={true} 
+                header="Comics" 
+                text="You’re also able to find a variety of comics, new and old." 
+                name="she-hulk"
+            />
+            <Banner 
+                color="violet" 
+                start={false} 
+                header="Creators" 
+                text="The real men and women behind the masks, they are the ones responsible for the heroes we know and love today" 
+                name="thor"
+            />
         </div>
     )
 };

@@ -1,0 +1,8 @@
+.footer {
+    padding: 1rem;
+    text-align: center;
+    background: map-get($colors, primary-dark);
+    color: map-get($colors, primary-light);
+    width: 100%;
+    display: block;
+}
