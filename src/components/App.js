@@ -20,7 +20,7 @@ class App extends Component {
         return (
             <Router>
                 <Nav />
-                <main className="vh-200">
+                <main>
                     <Switch>
                         <Route exact path="/" component={Featured}></Route>
                         <Route exact path="/characters" component={Characters}></Route>

@@ -20,12 +20,13 @@ class Nav extends Component {
     
     render() {
         const {active} = this.state;
+        const menuIcon = active ? "cross" : "hamburger-line";
 
         return (
             <nav className="navbar">
                 <Link to="/"><p className="bold"><span className="marvel-logo">MARVEL</span> Explore</p></Link>
                 <div className="menu" onClick={this.onClickHandler}>
-                    <div className="hamburger-line"></div>
+                    <div className={menuIcon}></div>
                 </div>
                 <NavList active={active}/>
             </nav>

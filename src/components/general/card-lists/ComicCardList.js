@@ -1,23 +1,22 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import utils from '../../utils';
+import Card from './Card';
 
 function ComicsCardList(props) {
     const {comics} = props;
 
     const comicCards = comics ? comics.map(comic => {
-        const {thumbnail, title, description, id} = comic;
-        const imgSrc = utils.formatImgSrc(thumbnail);
+        const {id} = comic;
 
         return (
-            <div className="card" key={id}>
-                <p>{title}</p>
-                <Link to={`/comics/${id}`}><img src={imgSrc} alt={`Cover of ${title}`} /></Link>
-            </div>
+            <Card key={id} data={comic} type="comics"/>
         );
     }) : null;
 
-    return comicCards;
+    return (
+        <div className="item-grid container">
+            {comicCards}
+        </div>
+    );
 };
 
 export default ComicsCardList;

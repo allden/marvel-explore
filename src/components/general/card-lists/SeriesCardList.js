@@ -1,23 +1,22 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import utils from '../../utils';
+import Card from './Card';
 
 function SeriesCardList(props) {
     const {series} = props;
     
     const seriesCards = series ? series.map(seriesSingular => {
-        const {id, title, thumbnail} = seriesSingular;
-        const imgSrc = utils.formatImgSrc(thumbnail);
-        
+        const {id} = seriesSingular;
+
         return (
-            <div className="card" key={id}>
-                <p>{title}</p>
-                <Link to={`/series/${id}`}><img src={imgSrc} alt={`${title} cover`} /></Link>
-            </div>
-        )
+            <Card key={id} data={seriesSingular} type="series"/>
+        );
     }) : null;
 
-    return seriesCards;
+    return (
+        <div className="item-grid container">
+            {seriesCards}
+        </div>
+    );
 };
 
 export default SeriesCardList;

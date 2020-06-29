@@ -3,7 +3,7 @@ import Banner from './Banner';
 
 function Featured() {
     return (
-        <div className="d-flex flex-col h-100">
+        <div className="d-flex flex-col vh-200">
             <Banner 
                 color="red" 
                 start={true} 

@@ -5,11 +5,13 @@
 @import './navbar';
 @import './footer';
 @import './items';
+@import './profile';
 
 @function getColor($color) {
     @return map-get($colors, "primary-#{$color}")
 }
 
+.text-light { color: getColor('light') }
 .text-dark { color: getColor('dark') }
 .text-red { color: getColor('red') }
 .text-orange { color: getColor('orange') }
@@ -20,25 +22,70 @@
     display: block;
     padding: .5rem 1rem;
     text-decoration: none;
-    color: map-get($colors, primary-light) ;
+    color: map-get($colors, primary-light);
+    transition: background .5s;
 
-    &-red { background: getColor('red') }
-    &-orange { background: getColor('orange') }
-    &-green { background: getColor('green') }
-    &-violet { background: getColor('violet') }
+    &-red { 
+        background: getColor('red');
+        &:hover {
+            background: darken(getColor('red'), 10%);
+        }
+    }
+    &-orange {
+        background: getColor('orange');
+        &:hover {
+            background: darken(getColor('orange'), 10%);
+        }
+    }
+    &-green {
+        background: getColor('green');
+        &:hover {
+            background: darken(getColor('green'), 10%);
+        }
+    }
+    &-violet {
+        background: getColor('violet'); 
+        &:hover {
+            background: darken(getColor('violet'), 10%);
+        }
+    }
 }
 
 .border-bottom {
     border-bottom: 1px solid;
 
+    &.border-m { border-width: 2px; }
+    &.border-l { border-width: 3px; }
     &.border-red { border-color: getColor('red') }
     &.border-orange { border-color: getColor('orange') }
     &.border-green { border-color: getColor('green') }
     &.border-violet { border-color: getColor('violet') }
 }
 
-@media screen and (max-height: 550px) {
+@media screen and (max-width: 1280px) {
+    .item-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .item-grid {
+        grid-template-columns: 1fr;
+    }
+
     .vh-200 {
         height: initial;
     }
-};
+
+    .flex-col-mobile {
+        flex-direction: column;
+    }
+
+    .profile-img {
+        width: 100%;
+    }
+
+    .content {
+        width: 100%;
+    }
+}

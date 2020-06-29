@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import SeriesCardList from '../general/card-lists/SeriesCardList';
 import ComicCardList from '../general/card-lists/ComicCardList';
 import utils from '../utils';
+import Divider from '../general/Divider';
+import Profile from '../general/Profile';
 
 class Creator extends Component {
     constructor(props) {
@@ -44,16 +46,13 @@ class Creator extends Component {
 
     render() {
         const {creator, series, comics} = this.state;
-        const {fullName, firstName, thumbnail} = creator;
-        const imgSrc = utils.formatImgSrc(thumbnail);
 
         return (
             <div>
-                <h1>{fullName || firstName}</h1>
-                <img src={imgSrc} alt={`Portrait of ${fullName || firstName}`}/>
-                <h2>Series</h2>
+                <Profile data={creator} type="creators" />
+                <Divider color="orange" title="Series" />
                 <SeriesCardList series={series} />
-                <h2>Comics</h2>
+                <Divider color="green" title="Comics" />
                 <ComicCardList comics={comics} />
             </div>
         );

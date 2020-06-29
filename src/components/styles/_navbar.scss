@@ -10,6 +10,7 @@
     top: 0;
     background: map-get($colors, primary-light);
     box-shadow: 0px 1px 10px 0px map-get($colors, primary-grey);
+    z-index: 9999;
 
     a {
         text-decoration: none;
@@ -57,7 +58,8 @@
     cursor: pointer;
     margin: 0 1rem;
 
-    &:hover .hamburger-line {
+    &:hover .hamburger-line,
+    &:hover .cross {
         background: map-get($colors, primary-red) !important;
     }
 
@@ -79,6 +81,21 @@
             content: '';
             transform: translateY(8px);
             @extend .hamburger-line;
+        }
+    }
+
+    .cross {
+        width: 45px;
+        height: 6px;
+        display: block;
+        background: map-get($colors, primary-dark);
+        transition: background .5s;
+        transform: rotateZ(45deg);
+
+        &::after {
+            @extend .cross;
+            content: '';
+            transform: rotateZ(90deg);
         }
     }
 }

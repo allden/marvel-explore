@@ -1,6 +1,11 @@
-function formatImgSrc(thumbnail={}, type='portrait_fantastic') {
+function formatImgSrc(thumbnail={}, type) {
     const {path, extension} = thumbnail;
-    return `${path}/${type}.${extension}`
+
+    if(type) {
+        return `${path}/${type}.${extension}`;
+    } else {
+        return `${path}.${extension}`;
+    };
 };
 
 function getUrl() {

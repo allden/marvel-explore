@@ -1,10 +1,15 @@
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
-    padding: 0;
+    padding: .5rem .75rem;
 }
 
 p {
     padding: .75rem;
+}
+
+.container {
+    width: 80vw;
+    margin: auto;
 }
 
 .scaleY-0 {
@@ -31,7 +36,11 @@ body {
 }
 
 .vh-200 {
-    min-height: 200vh;
+    height: 200vh;
+}
+
+.mx-b {
+    margin: 0 1rem 1rem 1rem;
 }
 
 .d-flex {
@@ -47,6 +56,10 @@ body {
 
     &.align-center {
         align-items: center;
+    }
+
+    &.justify-center {
+        justify-content: center;
     }
 }
 

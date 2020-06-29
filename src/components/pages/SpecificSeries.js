@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import CharacterCardList from '../general/card-lists/CharacterCardList';
 import CreatorCardList from '../general/card-lists/CreatorCardList';
 import utils from '../utils';
+import Divider from '../general/Divider';
+import Profile from '../general/Profile';
 
 class SpecificSeries extends Component {
     constructor(props) {
@@ -42,18 +44,13 @@ class SpecificSeries extends Component {
 
     render() {
         const {series, characters, creators} = this.state;
-        const {title, description, thumbnail} = series;
-        const imgSrc = utils.formatImgSrc(thumbnail);
 
-        const descriptionParagraph = description ? <p>{description}</p> : null;
         return (
             <div>
-                <img src={imgSrc} alt={`Cover of ${title}`} />
-                <h1>{title}</h1>
-                {descriptionParagraph}
-                <h2>Characters</h2>
+                <Profile data={series} type="series" />
+                <Divider color="red" title="Characters" />
                 <CharacterCardList characters={characters} />
-                <h2>Creators</h2>
+                <Divider color="violet" title="Creators" />
                 <CreatorCardList creators={creators} />
             </div>
         );

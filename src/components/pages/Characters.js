@@ -37,9 +37,7 @@ class Character extends Component {
                     name="marvel"
                     button={false}
                 />} height="50vh" />
-                <div className="item-grid">
-                    <CharacterCardList characters={characters} />
-                </div>
+                <CharacterCardList characters={characters} />
             </div>
         );
     };
