@@ -1,0 +1,29 @@
+.loader-container {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .loader {
+        border-top: 20px solid map-get($colors, primary-red);
+        border-right: 20px solid map-get($colors, primary-orange);
+        border-bottom: 20px solid map-get($colors, primary-green);
+        border-left: 20px solid map-get($colors, primary-violet);
+        height: 200px;
+        width: 200px;
+        border-radius: 100%;
+        margin: 1rem;
+        transition: transform 1s;
+        animation-name: spin;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+}
+
+
+@keyframes spin {
+    from { transform: rotateZ(0deg); }
+    to { transform: rotateZ(360deg); }
+}

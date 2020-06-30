@@ -11,16 +11,20 @@ class Character extends Component {
         this.state = {
             character: '',
             comics: '',
-            series: ''
+            series: '',
+            limit: 99
         };
         this.url = utils.getUrl();
     };
 
     componentDidMount() {
+        const {limit} = this.state;
+        const query = utils.createQuery(limit);
+
         const {id} = this.props.match.params;
-        const characterUrl = `${this.url}/marvel/characters/${id}`;
-        const characterComicUrl = `${this.url}/marvel/characters/${id}/comics`;
-        const characterSeriesUrl = `${this.url}/marvel/characters/${id}/series`;
+        const characterUrl = `${this.url}/marvel/characters/${id}?${query}`;
+        const characterComicUrl = `${this.url}/marvel/characters/${id}/comics?${query}`;
+        const characterSeriesUrl = `${this.url}/marvel/characters/${id}/series?${query}`;
         const fetchArr = [characterUrl, characterComicUrl, characterSeriesUrl];
 
         Promise.all(
@@ -42,14 +46,24 @@ class Character extends Component {
 
     render() {
         const {character, comics, series} = this.state;
-
-        return (
+        let comicSection = comics.length > 0 ? (
             <div>
-                <Profile data={character} type="characters" />
                 <Divider color="green" title="Comics" />
                 <ComicCardList comics={comics} />
+            </div>
+        ) : null;
+        let seriesSection = series.length > 0 ? (
+            <div>
                 <Divider color="orange" title="Series" />
                 <SeriesCardList series={series} />
+            </div>
+        ) : null;
+
+        return (
+            <div class="vh-100 d-flex flex-col">
+                <Profile data={character} type="characters" />
+                {comicSection}
+                {seriesSection}
             </div>
         );
     };

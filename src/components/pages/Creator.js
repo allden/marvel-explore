@@ -11,18 +11,22 @@ class Creator extends Component {
         this.state = {
             creator: '',
             series: '',
-            comics: ''
+            comics: '',
+            limit: 99
         };
 
         this.url = utils.getUrl();
     };
 
     componentDidMount() {
+        const {limit} = this.state;
+        const query = utils.createQuery(limit);
+
         const {id} = this.props.match.params;
 
-        const creatorUrl = `${this.url}/marvel/creators/${id}`;
-        const creatorSeriesUrl =`${this.url}/marvel/creators/${id}/series`;
-        const creatorComicsUrl = `${this.url}/marvel/creators/${id}/comics`;
+        const creatorUrl = `${this.url}/marvel/creators/${id}?${query}`;
+        const creatorSeriesUrl =`${this.url}/marvel/creators/${id}/series?${query}`;
+        const creatorComicsUrl = `${this.url}/marvel/creators/${id}/comics?${query}`;
 
         const fetchArr = [creatorUrl, creatorSeriesUrl, creatorComicsUrl];
 
@@ -47,13 +51,25 @@ class Creator extends Component {
     render() {
         const {creator, series, comics} = this.state;
 
-        return (
+        const seriesSection = series.length > 0 ? (
             <div>
-                <Profile data={creator} type="creators" />
                 <Divider color="orange" title="Series" />
                 <SeriesCardList series={series} />
+            </div>
+        ) : null;
+
+        const comicsSection = comics.length > 0 ? (
+            <div>
                 <Divider color="green" title="Comics" />
                 <ComicCardList comics={comics} />
+            </div>
+        ) : null;
+
+        return (
+            <div className="vh-100 d-flex flex-col">
+                <Profile data={creator} type="creators" />
+                {seriesSection}
+                {comicsSection}        
             </div>
         );
     };

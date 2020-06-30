@@ -1,8 +1,9 @@
 import React from 'react';
 import Card from './Card';
+import PaginationNav from './PaginationNav';
 
 function CharacterCardList(props) {
-    const {characters} = props;
+    const {characters, nextPage, previousPage} = props;
     
     const characterCards = characters ? characters.map(character => {
         const {id} = character;
@@ -13,8 +14,11 @@ function CharacterCardList(props) {
     }) : null;
     
     return (
-        <div className="item-grid container">
-            {characterCards}
+        <div className="d-flex flex-col align-center">
+            <div className="item-grid container">
+                {characterCards}
+            </div>
+            <PaginationNav nextPage={nextPage} previousPage={previousPage} type="characters"/>
         </div>
     );
 };

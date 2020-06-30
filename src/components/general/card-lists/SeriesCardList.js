@@ -1,8 +1,9 @@
 import React from 'react';
 import Card from './Card';
+import PaginationNav from './PaginationNav';
 
 function SeriesCardList(props) {
-    const {series} = props;
+    const {series, nextPage, previousPage} = props;
     
     const seriesCards = series ? series.map(seriesSingular => {
         const {id} = seriesSingular;
@@ -13,8 +14,11 @@ function SeriesCardList(props) {
     }) : null;
 
     return (
-        <div className="item-grid container">
-            {seriesCards}
+        <div className="d-flex flex-col align-center">
+            <div className="item-grid container">
+                {seriesCards}
+            </div>
+            <PaginationNav nextPage={nextPage} previousPage={previousPage} type="series"/>
         </div>
     );
 };

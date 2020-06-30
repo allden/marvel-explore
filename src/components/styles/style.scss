@@ -6,10 +6,16 @@
 @import './footer';
 @import './items';
 @import './profile';
+@import './loader';
 
 @function getColor($color) {
     @return map-get($colors, "primary-#{$color}")
 }
+
+bg-red { color: getColor('red') }
+bg-green { color: getColor('green') }
+bg-orange { color: getColor('orange') }
+bg-violet { color: getColor('violet') }
 
 .text-light { color: getColor('light') }
 .text-dark { color: getColor('dark') }
@@ -24,6 +30,9 @@
     text-decoration: none;
     color: map-get($colors, primary-light);
     transition: background .5s;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
 
     &-red { 
         background: getColor('red');
@@ -47,6 +56,13 @@
         background: getColor('violet'); 
         &:hover {
             background: darken(getColor('violet'), 10%);
+        }
+    }
+
+    &-dark {
+        background: getColor('dark');
+        &:hover {
+            background: darken(getColor('dark'), 10%);
         }
     }
 }
@@ -73,19 +89,17 @@
         grid-template-columns: 1fr;
     }
 
-    .vh-200 {
-        height: initial;
-    }
-
     .flex-col-mobile {
         flex-direction: column;
     }
 
-    .profile-img {
+    .container, .content, .profile-img {
         width: 100%;
     }
+}
 
-    .content {
-        width: 100%;
+@media screen and (max-height: 640px) {
+    .vh-200 {
+        height: initial;
     }
 }

@@ -7,6 +7,10 @@ p {
     padding: .75rem;
 }
 
+main {
+    min-height: 100vh;
+}
+
 .container {
     width: 80vw;
     margin: auto;
@@ -39,8 +43,16 @@ body {
     height: 200vh;
 }
 
+.vh-100 {
+    min-height: 100vh;
+}
+
 .mx-b {
     margin: 0 1rem 1rem 1rem;
+}
+
+.mr-1 {
+    margin-right: 1rem;
 }
 
 .d-flex {
