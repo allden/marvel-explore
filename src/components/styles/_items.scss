@@ -1,6 +1,6 @@
 .item-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24%, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     align-items: center;
     justify-items: center;
     text-align: center;

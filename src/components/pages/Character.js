@@ -60,7 +60,7 @@ class Character extends Component {
         ) : null;
 
         return (
-            <div class="vh-100 d-flex flex-col">
+            <div className="vh-100 d-flex flex-col">
                 <Profile data={character} type="characters" />
                 {comicSection}
                 {seriesSection}

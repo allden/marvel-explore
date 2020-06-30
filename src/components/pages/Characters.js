@@ -44,7 +44,6 @@ class Character extends Component {
         fetch(`${this.url}/marvel/characters?${query}`)
         .then(res => res.json())
         .then(characters => {
-            console.log(characters);
             const {results, total} = characters.data.data;
             this.setState({
                 characters: results,

@@ -98,7 +98,7 @@ bg-violet { color: getColor('violet') }
     }
 }
 
-@media screen and (max-height: 640px) {
+@media screen and (max-height: 800px) {
     .vh-200 {
         height: initial;
     }
