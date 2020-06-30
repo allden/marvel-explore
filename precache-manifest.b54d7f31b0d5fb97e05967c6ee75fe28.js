@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "87dc06634aababef6a4d2469e7fb7f43",
+    "revision": "470620f769dd4c6578209abd32ad1965",
     "url": "/marvel-explore/index.html"
   },
   {
-    "revision": "75eccab0f439b04a6fed",
-    "url": "/marvel-explore/static/css/main.781a6648.chunk.css"
+    "revision": "f2038a66be5137b0da4a",
+    "url": "/marvel-explore/static/css/main.824ac371.chunk.css"
   },
   {
-    "revision": "16a90226e72f8f940359",
-    "url": "/marvel-explore/static/js/2.829468b4.chunk.js"
+    "revision": "48f8931481b48a70e9f9",
+    "url": "/marvel-explore/static/js/2.fbaccd53.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/marvel-explore/static/js/2.829468b4.chunk.js.LICENSE.txt"
+    "url": "/marvel-explore/static/js/2.fbaccd53.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "75eccab0f439b04a6fed",
-    "url": "/marvel-explore/static/js/main.afa90621.chunk.js"
+    "revision": "f2038a66be5137b0da4a",
+    "url": "/marvel-explore/static/js/main.46250e94.chunk.js"
   },
   {
     "revision": "6aa9f25c98cbb20ac97f",
