@@ -10,10 +10,11 @@ import Comic from './pages/Comic';
 import Creators from './pages/Creators';
 import Creator from './pages/Creator';
 import Featured from './general/Featured';
+import NotFound from './general/NotFound';
 // misc
 import Nav from './general/Nav';
 import Footer from './general/Footer'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 
 class App extends Component {
     render() {
@@ -31,6 +32,8 @@ class App extends Component {
                         <Route exact path="/comics/:id" component={Comic}></Route>
                         <Route exact path="/creators" component={Creators}></Route>
                         <Route exact path="/creators/:id" component={Creator}></Route>
+                        <Route exact path="/marvel-explore" component={() => <Redirect to="/" />}></Route>
+                        <Route exact path="*" component={NotFound} />
                     </Switch>
                     <Footer />
                 </main>
